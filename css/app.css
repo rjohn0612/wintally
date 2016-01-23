@@ -1,0 +1,179 @@
+* {
+    margin: 0;
+    padding: 0;
+    outline-style: hidden;
+    text-transform: uppercase;
+    font-family: arial;
+}
+::-webkit-input-placeholder {
+   text-align: center;
+}
+
+:-moz-placeholder { /* Firefox 18- */
+   text-align: center;  
+}
+
+::-moz-placeholder {  /* Firefox 19+ */
+   text-align: center;  
+}
+
+:-ms-input-placeholder {  
+   text-align: center; 
+}
+html, body, select, option {
+	width: 100%;
+	height: 100%;
+}
+img {
+  width: 100%;
+  height: 100%;
+}
+img.center{
+  display: block;
+  margin: -15px auto; 
+}
+input[type="text"], textarea {
+	font-weight: bold;
+	text-align: center;
+}
+#getInput a {
+  color: #ffffff;
+  background: #3b5998;
+}
+#getInput2 a {
+  color: #ffffff;
+  background: #3b5998;
+}
+#centerTable {
+  font-family: monospace;
+  width: 95%;
+  margin: 0 auto;
+}
+#scoreBoard {
+  margin: 20px auto 0 auto;
+  width: 100%;
+  height: 150px;
+  border-radius: 10px;
+  background-color: #3b5998;
+  border: 2px solid black;
+  box-sizing: border-box;
+  text-align: center;
+  color: white;
+  text-shadow: 2px 2px black;
+}
+#scoreBoard p.topMessage {
+  font-size: 24px;
+  line-height: 45px;
+}
+#scoreBoard p.results {
+  font-size: 72px;
+  line-height: 50px;
+}
+#scoreBoard p.lowMessage {
+  font-size: 24px;
+  line-height: 50px;
+}
+#myRecord {
+  padding-top: 20px;
+  margin: auto;
+  text-align: center;
+  font-weight: bold;
+}
+#left {
+  display: inline-block;
+  text-align: left;
+}
+#container {
+  margin-bottom: 100px;
+  width: 100%;
+  background: transparent;
+  border: none;
+}
+#container2 {
+  width: 75%;
+  margin: auto;
+}
+#container2 a {
+  font-size: 20px;
+}
+#container2 li {
+  padding: 5px;
+}
+#stop {
+  color: #ffffff;
+  background: #3b5998;
+  border: 2px solid black;
+  box-sizing: border-box;
+}
+#win {
+  height: 60px;
+  line-height: 30px;
+  background-color: green;
+  color: white;
+  text-shadow: 1px 1px black;
+  border: 2px solid black;
+  box-sizing: border-box;
+}
+#lose {
+  height: 60px;
+  line-height: 30px;
+  background-color: red;
+  color: white;
+  text-shadow: 1px 1px black;
+  border: 2px solid black;
+  box-sizing: border-box;
+}
+#done {
+  margin-bottom: 30px;
+  clear: both;
+  padding-top: 10px;
+  background: transparent;
+  border: none;
+}
+#navbar1 .ui-btn-active { 
+  background: none !important; 
+  background-color: #3b5998 !important;  
+}
+#navbar2 .ui-btn-active { 
+  background: none !important; 
+  background-color: #3b5998 !important;  
+}
+#aboutInfo {
+	margin: auto;
+  	width: 100%;
+  	height: 300px;
+  	text-align: center;
+}
+#about a {
+  color: #ffffff;
+  background: #3b5998;
+}
+/* table formatting for the STATS page */
+.TFtable{
+    text-align: center;
+    width: 100%; 
+    border-collapse:collapse; 
+    font-size: 10px;
+}
+.TFtable td{ 
+    padding: 2px; border:#4e95f4 2px solid;
+}
+.TFtable tr{
+    background: #b8d1f3;
+}
+.TFtable tr:nth-child(odd){ 
+    background: #b8d1f3;
+}
+.TFtable tr:nth-child(even){
+    background: #d7ddea;
+}
+
+#footer {
+  background-color: #3b5998;
+  font-weight: bolder;
+}
+#footer p {
+    text-align: center;
+    font-size: 12px;
+    color: white;
+}

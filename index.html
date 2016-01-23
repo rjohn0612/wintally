@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <meta name="format-detection" content="telephone=no" />
+        <meta name="msapplication-tap-highlight" content="no" />
+        <!-- WARNING: for iOS 7, remove the width=device-width and height=device-height attributes. See https://issues.apache.org/jira/browse/CB-4323 -->
+        <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1,target-densitydpi=medium-dpi" />
+        <link rel="stylesheet" type="text/css" href="css/app.css" />
+        <link rel="stylesheet" type="text/css" href="css/jquery.mobile.css" />
+        <script type="text/javascript" src="js/jquery.js"></script>
+        <script type="text/javascript" src="js/jquery.mobile.js"></script>
+        <script type="text/javascript" src="js/app.js"></script>
+        <title>Win Tally</title>
+    </head>
+    <body>
+        <div data-role="page" id="main">
+            <div data-role="navbar" data-iconpos="bottom" id="navbar1">
+                <ul>
+                    <li><a href="#main" data-icon="home" onclick="resetscore()">HOME</a></li>
+                    <li><a href="#stats" data-icon="bullets" onclick="resetscore()">STATS</a></li>
+                    <li><a href="#about" data-icon="info" onclick="resetscore()">ABOUT</a></li>
+                </ul>
+            </div> <!-- #navbar1 ending div  !-->
+
+            <div data-role="content" id="banner">
+                <div data-role="content">
+            <!--        <img class="center" src="images/win_tallytest3.png"> !-->
+                </div>  <!--  content ending div  !-->
+            </div> <!--  #banner ending div  !-->
+
+            <div data-role="navbar" id="navbar2">
+                <ul>
+                    <li><a href="#main" class="ui-btn-active ui-state-persist" onclick="resetscore()">NORMAL</a></li>
+                    <li><a href="#fightingGames" data-transition="slide" onclick="resetscore()">FIGHTING GAMES</a></li>
+                </ul>
+            </div> <!--  #navbar2 ending div  !-->
+
+            <div data-role="content" id="getInput">
+                <form>
+                    <input type="text" id="gamer1" data-mini="true" name="player1" placeholder="your name" onclick=this.value="" maxlength="12">
+                    <input type="text" id="gamer2" data-mini="true" name="player2" placeholder="opponent's name" onclick=this.value="" maxlength="12"> 
+                    <input type="text" id="gameName" data-mini="true" name="gameName" placeholder="game" maxlength="12" onclick=this.value=""> 
+                    <a href="#start" id="validate1" class="ui-btn ui-mini ui-corner-all" data-transition="slidefade" onclick="playing()">BEGIN</a>
+                </form>
+            </div> <!--  #getInput ending div  !-->
+
+            <div data-role="footer" data-position="fixed" id="footer">
+                <p>&#169; 2015 WIN TALLY</p>
+            </div> <!--  #footer ending div  !-->
+            
+        </div> <!--  page ID #main ending div  !-->
+
+        <!-- Page 2 ID #fightingGames !-->
+
+        <div data-role="page" id="fightingGames"> 
+            <div data-role="navbar" data-iconpos="bottom" id="navbar1"> 
+                <ul>
+                    <li><a href="#main" data-icon="home" data-transition="slide" data-direction="reverse" onclick="resetscore()">HOME</a></li>
+                    <li><a href="#stats" data-icon="bullets" onclick="resetscore()">STATS</a></li>
+                    <li><a href="#about" data-icon="info" onclick="resetscore()">ABOUT</a></li>
+                </ul>
+            </div> <!--  #navbar2 ending div  !-->
+
+            <div data-role="content" id="banner"> 
+                <div data-role="content">
+                <!--    <img class="center" src="images/win_tallytest3.png"> !-->
+                </div>
+            </div> <!--  #banner ending div  !-->
+
+                <div data-role="navbar" id="navbar2">
+                    <ul>
+                        <li><a href="#main" data-transition="slide" data-direction="reverse" onclick="resetscore()">NORMAL</a></li>
+                        <li><a href="#fightingGames" class="ui-btn-active ui-state-persist" onclick="resetscore()">FIGHTING GAMES</a></li>
+                    </ul>
+                </div> <!--  #navbar2 ending div  !-->
+
+                <div data-role="content" id="getInput2">
+                    <form>
+                        <input type="text" id="gamer1fgc" data-mini="true" name="gamer1fgc" placeholder="your name" onclick=this.value="" maxlength="12" >
+                        <input type="text" id="char1" data-mini="true" name="char1" placeholder="character" onclick=this.value="" maxlength="12" >
+                        <input type="text" id="gamer2fgc" data-mini="true" name="gamer2fgc" placeholder="opponent's name" onclick=this.value="" maxlength="12" >
+                        <input type="text" id="char2" data-mini="true" name="char2" placeholder="character" onclick=this.value="" maxlength="12" >
+                        <input type="text" id="gameNamefgc" data-mini="true" name="gameNamefgc" placeholder="game" maxlength="12" onclick=this.value="" > 
+                            <select data-mini="true" id="first_two" data-theme="b" >
+                                <option value="0" selected="selected">SELECT A SET</option>
+                                <option value="3">BEST OF 3</option>
+                                <option value="5">BEST OF 5</option>
+                                <option value="7">BEST OF 7</option>
+                                <option value="10">BEST OF 10</option>
+                                <option value="20">BEST OF 20</option>
+                            </select>
+                            <a href="#start" id="validate2" class="ui-btn ui-mini ui-corner-all" data-transition="slidefade"  onclick="playing2()">BEGIN</a>
+                    </form>
+                </div>
+                
+                <div data-role="footer" data-position="fixed" id="footer">
+                    <p>&#169; 2015 WIN TALLY</p>
+                </div>
+        </div> <!--  page ID #fightingGames ending div  !-->
+
+        <!-- Page 3 ID #start !-->
+
+        <div data-role="page" id="start">
+            <div data-role="content">
+                <div id="container">
+                    <div id="scoreBoard">
+                        <p class="topMessage">GOOD</p>
+                        <p class="results">--</p>
+                        <p class="lowMessage">LUCK</p>
+                    </div>
+                        <div id="myRecord">
+                            <div id="left">
+                            <p id="streak">WINNING STREAK: 0</p>
+                            <p id="loss">LOSING STREAK: 0</p>
+                            <p id="totalGames">TOTAL GAMES: 0</p>
+                            <p id="winLoss">WIN: 0 - LOSS: 0</p>
+                            <p id="percentage">WIN RATIO: </p>
+                            <p id="playing">PLAYING: </p>
+                            </div>
+                        </div>
+                </div>
+            </div> <!--  content ending div  !-->
+            
+            <div data-role="footer" data-position="fixed" id="container">
+                <div data-role="navbar" id="container2">
+                    <ul>
+                        <li><a href="#" id="win" class="ui-btn ui-corner-all" onclick="winner()">WIN</a></li>
+                        <li><a href="#" id="lose" class="ui-btn ui-corner-all" onclick="loser()">LOSE</a></li>
+                    </ul>
+                </div>
+            </div> <!--  #container ending div  !-->
+
+            <div data-role="footer" data-position="fixed" id="done">
+                <div data-role="navbar" id="container2">
+                    <ul>
+                        <li><a href="#" id="stop" data-rel="back" class="ui-btn ui-mini ui-corner-all" data-transition="slidefade" data-direction="reverse" onclick="resetscore()">STOP</a></li>
+                    </ul>
+                </div>
+            </div> <!--  #done ending div  !-->
+
+            <div data-role="footer" data-position="fixed" id="footer"> <!--  footer beginning  !-->
+                <p>&#169; 2015 WIN TALLY</p>
+            </div> <!--  footer ending div  !-->
+        </div> <!--  page ID #start ending div  !-->
+
+        <!-- Page 4 ID #stats !-->  <!--  page ID #about ending div  !-->
+
+        <div data-role="page" id="stats">
+            <div data-role="navbar" data-iconpos="bottom" id="navbar1">
+                <ul>
+                    <li><a href="#normal" data-rel="back" data-icon="home">HOME</a></li>
+                    <li><a href="#stats" data-icon="bullets">STATS</a></li>
+                    <li><a href="#about" data-icon="info">ABOUT</a></li>
+                </ul>
+            </div>
+        <!--  #navbar1 ending div  !-->
+
+        <div id="centerTable">
+            <table id="mystats" class="TFtable"></table>
+        </div>
+        <div data-role="footer" data-position="fixed" id="footer">
+            <p>&#169; 2015 WIN TALLY</p>
+        </div>
+        <script>showSet();</script>
+        </div>
+
+        <!-- Page 4 ID #stats !-->  <!--  page ID #about ending div  !-->
+
+        <div data-role="page" id="about">
+            <div data-role="content">
+                <div id="aboutInfo">
+                            </br></br>
+                    <p>Win Tally</p></br>
+                    <p>Version 1.0.0</p></br>
+                    <p>Created by Rodney John</p></br></br>
+                    <a href="#" data-rel="back" data-role="button" data-theme="a" data-icon="delete" class="ui-btn ui-mini ui-corner-all">back</a> </br>
+                </div>
+            </div>
+            
+            
+            <div data-role="footer" data-position="fixed" id="footer">
+                <p>&#169; 2015 WIN TALLY</p>
+            </div>
+        </div>
+
+        <script type="text/javascript" src="cordova.js"></script>
+    </body>
+</html>
