@@ -1,5 +1,34 @@
 $(document).ready(function() {
-    document.addEventListener('deviceready', onDeviceReady, false);
+    var admobid = {};
+if( /(android)/i.test(navigator.userAgent) ) { 
+    admobid = { // for Android
+        banner: 'ca-app-pub-6258452148410362/7278630085',
+        interstitial: 'ca-app-pub-6258452148410362/1995649287'
+    };
+} else if(/(ipod|iphone|ipad)/i.test(navigator.userAgent)) {
+    admobid = { // for iOS
+        banner: 'ca-app-pub-6258452148410362/5603420483',
+        interstitial: 'ca-app-pub-6258452148410362/9518916082'
+    };
+} else {
+    admobid = { // for Windows Phone
+        banner: 'ca-app-pub-6258452148410362/8556886889',
+        interstitial: 'ca-app-pub-6258452148410362/3472382483'
+    };
+}
+
+function initApp() {
+    if (AdMob) {
+        AdMob.createBanner({
+            adId : admobid.banner,
+            position : AdMob.AD_POSITION.BOTTOM_CENTER,
+            autoShow : true
+        });
+    }
+}
+
+document.addEventListener('deviceready', initApp, false);
+    //document.addEventListener('deviceready', onDeviceReady, false);
 
     // Validation check for normal page
     $('#validate1').click(function (e) {
