@@ -2,7 +2,7 @@
 <widget id="com.phonegap.wintally" version="1.0.0" xmlns="http://www.w3.org/ns/widgets" xmlns:gap="http://phonegap.com/ns/1.0">
     <name>Win Tally</name>
     <description>
-        A 1 ON 1 'VERSUS' COUNTER RECORDER FOR GAMES THAT DON'T HAVE ONE.
+        A 1 vs 1 score keeper. Great for games such as Chess, Checkers, Tic Tac Toe or a vast variety of 1 on 1 Card Games.  Also designed with fighting video games in mind it can be used as a tool to record offline sessions against your toughest opponents.
     </description>
     <author email="rodney@chaoticgrace.com" href="http://chaoticgrace.com">
         Rodney John

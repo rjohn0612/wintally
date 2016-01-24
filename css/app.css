@@ -140,10 +140,15 @@ input[type="text"], textarea {
 }
 #aboutInfo {
 	margin: auto;
-  	width: 100%;
-  	height: 300px;
-  	text-align: center;
+  width: 100%;
+  height: 300px;
+  text-align: center;
 }
+#aboutInfo p {
+  text-transform: none;
+}
+#aboutInfo p.right {
+  text-align: left;}
 #about a {
   color: #ffffff;
   background: #3b5998;
@@ -176,4 +181,83 @@ input[type="text"], textarea {
     text-align: center;
     font-size: 12px;
     color: white;
+}
+
+@media (max-width: 320px) {
+  #myRecord {
+  padding-top: 20px;
+  margin: auto;
+  text-align: center;
+  font-weight: bold;
+  font-size: 12px;
+  }
+
+  #mystats {
+    font-size: 8px;
+  }
+}
+
+@media (max-width: 360px) {
+  #myRecord {
+  padding-top: 20px;
+  margin: auto;
+  text-align: center;
+  font-weight: bold;
+  font-size: 12px;
+  }
+  #mystats {
+    font-size: 8px;
+  }
+}
+
+@media (max-width: 375px) {
+  #myRecord {
+  padding-top: 20px;
+  margin: auto;
+  text-align: center;
+  font-weight: bold;
+  font-size: 12px;
+  }
+  #mystats {
+    font-size: 8px;
+  }
+}
+
+@media (max-width: 384px) {
+  #myRecord {
+  padding-top: 20px;
+  margin: auto;
+  text-align: center;
+  font-weight: bold;
+  font-size: 12px;
+  }
+  #mystats {
+    font-size: 8px;
+  }
+}
+
+@media (max-width: 412px) {
+  #myRecord {
+  padding-top: 20px;
+  margin: auto;
+  text-align: center;
+  font-weight: bold;
+  font-size: 12px;
+  }
+  #mystats {
+    font-size: 8px;
+  }
+}
+
+@media (max-width: 414px) {
+  #myRecord {
+  padding-top: 20px;
+  margin: auto;
+  text-align: center;
+  font-weight: bold;
+  font-size: 12px;
+  }
+  #mystats {
+    font-size: 8px;
+  }
 }
