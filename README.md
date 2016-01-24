@@ -2,7 +2,7 @@
 
 nothing much to tell!  I wanted to learn how to code and this is my first app and the only thing I could think of making.
 
-It's a 1 vs 1 score keeper. Great for games such as Chess, Checkers, Tic Tac Toe or a vast variety of 1 on 1 Card Games.  Designed with fighting video games in mind it can be used as a tool to record offline sessions against your toughest opponents.  
+It's a 1 vs 1 score keeper. Great for games such as Chess, Checkers, Tic Tac Toe or a vast variety of 1 on 1 Card Games.  Also designed with fighting video games in mind it can be used as a tool to record offline sessions against your toughest opponents.  
 
 We live in a digital world now so who has time to look for pen and paper when you can just use an app! 
 
