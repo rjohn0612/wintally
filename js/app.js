@@ -1,21 +1,36 @@
 $(document).ready(function() {
+ /*   AppRate.preferences.storeAppURL.ios = 'com.phonegap.wintally';
+    AppRate.preferences.storeAppURL.android = 'market://details?id=com.phonegap.wintally';
+    AppRate.preferences.openStoreInApp = true;
+    AppRate.preferences.displayAppName = 'Win Tally';
+    AppRate.preferences.usesUntilPrompt = 5;
+    AppRate.preferences.promptAgainForEachNewVersion = false;
+
+    var customLocale = {en};
+    customLocale.title = "Rate %@";
+    customLocale.message = "If you enjoy using %@, would you mind taking a moment to rate it? It won’t take more than a minute. Thanks for your support!";
+    customLocale.cancelButtonLabel = "No, Thanks";
+    customLocale.laterButtonLabel = "Remind Me Later";
+    customLocale.rateButtonLabel = "Rate It Now";
+    AppRate.preferences.customLocale = customLocale; */
+
     var admobid = {};
-if( /(android)/i.test(navigator.userAgent) ) { 
-    admobid = { // for Android
-        banner: 'ca-app-pub-6258452148410362/7278630085',
-        interstitial: 'ca-app-pub-6258452148410362/1995649287'
-    };
-} else if(/(ipod|iphone|ipad)/i.test(navigator.userAgent)) {
-    admobid = { // for iOS
-        banner: 'ca-app-pub-6258452148410362/5603420483',
-        interstitial: 'ca-app-pub-6258452148410362/9518916082'
-    };
-} else {
-    admobid = { // for Windows Phone
-        banner: 'ca-app-pub-6258452148410362/8556886889',
-        interstitial: 'ca-app-pub-6258452148410362/3472382483'
-    };
-}
+        if( /(android)/i.test(navigator.userAgent) ) { 
+            admobid = { // for Android
+            banner: 'ca-app-pub-6258452148410362/7278630085',
+            interstitial: 'ca-app-pub-6258452148410362/1995649287'
+            };
+        } else if(/(ipod|iphone|ipad)/i.test(navigator.userAgent)) {
+            admobid = { // for iOS
+            banner: 'ca-app-pub-6258452148410362/5603420483',
+            interstitial: 'ca-app-pub-6258452148410362/9518916082'
+            };
+        } else {
+            admobid = { // for Windows Phone
+            banner: 'ca-app-pub-6258452148410362/8556886889',
+            interstitial: 'ca-app-pub-6258452148410362/3472382483'
+        };
+    }   
 
 function initApp() {
     if (AdMob) {
@@ -76,7 +91,7 @@ document.addEventListener('deviceready', initApp, false);
 });
 
 function onDeviceReady() {
-    alert("Working!");
+    
 }
 
 //All my global variables//
@@ -169,6 +184,7 @@ function clearFields() {
     document.getElementById("gamer2fgc").value = "";
     document.getElementById("char2").value = "";
     document.getElementById("gameNamefgc").value = "";
+    //AppRate.promptForRating();
 }
 
 //This function is called when you select the winner button//
@@ -261,11 +277,16 @@ function sumItUp() {
     var compare = e.options[e.selectedIndex].value;
     if (compare > 0) {
         if (totalGames >= compare && winRatio1 > winRatio2) {
-            alert(x[0].innerHTML = p1.toUpperCase() + " IS THE WINNER");
+            $('#popupDialog').popup("open");
+            document.getElementById("setnumber").innerHTML = ("best of " + e.value);
+            document.getElementById("whowon").innerHTML = (p1 + " IS THE WINNER");
             resetscore();
         }
         if (totalGames >= compare && winRatio1 < winRatio2) {
-            alert(x[0].innerHTML = p2.toUpperCase() + " IS THE WINNER");
+            $('#popupDialog').popup("open");
+            document.getElementById("setnumber").innerHTML = ("best of " + e.value);
+            document.getElementById("whowon").innerHTML = (p2 + " IS THE WINNER");
+            resetscore();
         }
     }
 }
@@ -279,4 +300,8 @@ function showSet() {
             txt += "<tr><th>"+"YOU"+"</th>"+"<th>"+"OPPONENT"+"</th>"+"<th>"+"WIN"+"</th>"+"<th>"+"LOSS"+"</th>"+"<th>"+"T. GAMES"+"</th>"+"<th>"+"RATIO"+"</th>"+"<th>"+"GAME PLAYED"+"</th>"+"<tr><td>"+setData.n1+"<br />"+setData.ch1+"</td>"+"<td>"+setData.n2+"<br />"+setData.ch2+"</td>"+"<td>"+setData.w1+"</td>"+"<td>"+setData.w2+"</td>"+"<td>"+setData.tg+"</td>"+"<td>"+(setData.w1 / setData.tg * (100)).toFixed(0)+"%"+"</td>"+"<td>"+setData.gn+"</td>";
         }
         document.getElementById("mystats").innerHTML = txt;
+}
+
+function clearstats() {
+    localStorage.clear("sessionResults");
 }

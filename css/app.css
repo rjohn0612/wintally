@@ -141,7 +141,7 @@ input[type="text"], textarea {
 #aboutInfo {
 	margin: auto;
   width: 100%;
-  height: 300px;
+  height: 480px;
   text-align: center;
 }
 #aboutInfo p {
@@ -152,6 +152,19 @@ input[type="text"], textarea {
 #about a {
   color: #ffffff;
   background: #3b5998;
+}
+#clearstats a { 
+  background-color: red;  
+}
+#popupDialog {
+  width: 300px;
+  height: 200px;
+}
+#whowon {
+  text-align: center;
+}
+#popupbtnok a {
+  margin: 0 auto;
 }
 /* table formatting for the STATS page */
 .TFtable{
